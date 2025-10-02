@@ -1,6 +1,6 @@
 - name: "Practicing the Ansible play books"
   hosts: localhost
-  vars:
+  vars_files:
   - course.yaml
   tasks:
   - name: Pring the course deatils

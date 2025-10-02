@@ -2,9 +2,11 @@
   hosts: localhost
   tasks:
   - name: printing the names
-    ansible.builtin.debug:
-      msg: "Hi: {{ item }}, How are you....!"
+    ansible.builtin.package:
+      msg: "{{ item }}"
+      state: present
     loop:
-    - Ramesh
-    - Suresh
-    - Manikanta
+    - nginx
+    - nodejs
+    - mysql
+    - zip

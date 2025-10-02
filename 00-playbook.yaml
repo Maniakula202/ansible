@@ -1,6 +1,5 @@
 - name: "Practicing the Ansible play books"
   hosts: localhost
   tasks:
-  - name: Learnig Ansible
-    ansible.builtin.debug:
-      msg: "Learning ansible at JoinDevOps by sivakumar"
+  - name: ping
+    ansible.builtin.ping:

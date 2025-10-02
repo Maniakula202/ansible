@@ -1,13 +1,11 @@
 - name: "Practicing the Ansible play books"
-  hosts: frontend
+  hosts: localhost
   become: yes
+  vars:
+    name: Manikanta
+    course: DevOps
+    duration: 120hrs
   tasks:
-  - name: Installing nginx
-    ansible.builtin.dnf:
-      name: nginx
-      state: present
-  - name: Start and Enable the nginx
-    ansible.builtin.service:
-        name: nginx
-        state: started
-        enabled: yes
+  - name: Pring the course deatils
+    ansible.builtin.debug:
+      msg: "My name is {{ name }} and I am learnig {{ course }} which held for {{ duration }}"

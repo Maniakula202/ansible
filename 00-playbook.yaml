@@ -1,20 +1,10 @@
 - name: "Practicing the Ansible play books"
   hosts: localhost
-  vars_prompt:
-  - name: number
-    prompt: Enter the Number
-    private: no
   tasks:
-  - name: Checking the gievn number is greater than 50 or not
+  - name: printing the names
     ansible.builtin.debug:
-      msg: "The given number {{ number }} is greater that 50"
-    when: number | int > 50
-  - name: Checking the gievn number is lessthan 50 or not
-    ansible.builtin.debug:
-      msg: "The given number {{ number }} is lessthan that 50"
-    when: number | int < 50
-  - name: Checking the gievn number is Equal to 50 or not
-    ansible.builtin.debug:
-      msg: "The given number {{ number }} is Equal to that 50"
-    when: number | int == 50
-
+      msg: "Hi: {{ item }}, How are you....!"
+    loop:
+    - Ramesh
+    - Suresh
+    - Manikanta

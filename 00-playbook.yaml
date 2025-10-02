@@ -1,13 +1,8 @@
 - name: "Practicing the Ansible play books"
   hosts: localhost
-  vars_prompt:
-    - name: username
-      prompt: "username:"
-      private: no
-    - name: password
-      prompt: "password:"
-      private: yes
+  vars:
+  - course.yaml
   tasks:
   - name: Pring the course deatils
     ansible.builtin.debug:
-      msg: "My username is {{ username }} and password is {{ password }}"
+      msg: "My name is {{ student }} and I am learning {{ course }} and duration is {{ duration }}"

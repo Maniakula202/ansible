@@ -1,22 +1,22 @@
 - name: "Practicing the Ansible play books"
   hosts: localhost
   vars:
-    tocheckwith: 50
-  vars_prompt:
-  - name: number
-    prompt: Enter the Number
-    private: no
+    number: 20
+      # vars_prompt:
+  # - name: number
+  #   prompt: Enter the Number
+  #   private: no
   tasks:
   - name: Checking the gievn number is greater than 50 or not
     ansible.builtin.debug:
       msg: "The given number {{ number }} is greater that 50"
-    when: number > tocheckwith
+    when: number > 50
   - name: Checking the gievn number is lessthan 50 or not
     ansible.builtin.debug:
       msg: "The given number {{ number }} is lessthan that 50"
-    when: number < tocheckwith
+    when: number < 50
   - name: Checking the gievn number is Equal to 50 or not
     ansible.builtin.debug:
       msg: "The given number {{ number }} is Equal to that 50"
-    when: number == tocheckwith
+    when: number == 50
 

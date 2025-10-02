@@ -6,7 +6,7 @@
   - name: printing the names
     ansible.builtin.package:
       msg: "{{ item }}"
-      state: present
+      state: latest
     loop:
     - nginx
     - nodejs

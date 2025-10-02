@@ -1,5 +1,8 @@
 - name: "Practicing the Ansible play books"
-  hosts: localhost
+  hosts: frontend
   tasks:
-  - name: ping
-    ansible.builtin.ping:
+  - name: Installing nginx
+    ansible.builtin.dnf:
+      name: nginx
+      state: present
+    

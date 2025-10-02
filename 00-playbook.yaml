@@ -1,14 +1,13 @@
 - name: "Practicing the Ansible play books"
   hosts: localhost
-  become: yes
-  # vars:
-  #   student: Manikanta
-  #   course: DevOps
-  #   duration: 120hrs
+  vars_prompt:
+    - name: username
+      prompt: "username:"
+      private: no
+    - name: password
+      prompt: "password:"
+      private: yes
   tasks:
   - name: Pring the course deatils
-    # vars:
-    #   course: Ansible
-    #   duration: changed to 120hrs
     ansible.builtin.debug:
-      msg: "My name is {{ student }} and I am learnig {{ course }} duration {{ duration }}"
+      msg: "My username is {{ username }} and password is {{ password }}"

@@ -1,8 +1,17 @@
 - name: "Practicing the Ansible play books"
   hosts: localhost
-  vars_files:
-  - course.yaml
-  tasks:
-  - name: Pring the course deatils
-    ansible.builtin.debug:
-      msg: "My name is {{ student }} and I am learning {{ course }} and duration is {{ duration }}"
+  vars:
+    student: Manikanta # string 
+    course: DevOps # string 
+    duration: 120 # intiger/number
+    present: true # boolean
+    #list
+    course_content:
+    - linux
+    - shell-script
+    - ansible
+    #dictionary/map/object
+    content_duration:
+      linux: 10HRS
+      shell-script: 12hrs
+      ansible: 20hrs

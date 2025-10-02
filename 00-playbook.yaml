@@ -1,5 +1,5 @@
 - name: "Practicing the Ansible play books"
-  hosts: loacalhost
+  hosts: localhost
   tasks:
   - name: Learnig Ansible
     ansible.builtin.debug:

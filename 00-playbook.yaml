@@ -1,11 +1,10 @@
 - name: "Practicing the Ansible play books"
-  hosts: local
-  connection: local
+  hosts: localhost
   become: yes
   tasks:
   - name: printing the names
     ansible.builtin.package:
-      msg: "{{ item }}"
+      name: "{{ item }}"
       state: latest
     loop:
     - nginx

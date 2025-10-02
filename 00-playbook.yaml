@@ -2,10 +2,13 @@
   hosts: localhost
   become: yes
   vars:
-    name: Manikanta
+    student: Manikanta
     course: DevOps
     duration: 120hrs
   tasks:
   - name: Pring the course deatils
+    vars:
+      course: Ansible
+      duration: changed to 120hrs
     ansible.builtin.debug:
-      msg: "My name is {{ name }} and I am learnig {{ course }} which held for {{ duration }}"
+      msg: "My name is {{ student }} and I am learnig {{ course }} duration {{ duration }}"

@@ -15,3 +15,8 @@
       linux: 10HRS
       shell-script: 12hrs
       ansible: 20hrs
+  tasks:
+  - name: printing the data types
+    ansible.builtin.debug:
+      msg: "Course Name is: {{ course }}, Duratioin: {{ duration }}, student is: {{ student }}"
+      msg: "course_content is: {{ course_content }}, content_duration is: {{ content_duration }}"

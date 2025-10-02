@@ -1,5 +1,6 @@
 - name: "Practicing the Ansible play books"
   hosts: localhost
+  become: yes
   tasks:
   - name: printing the names
     ansible.builtin.package:

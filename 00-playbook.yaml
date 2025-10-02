@@ -1,8 +1,7 @@
 - name: "Practicing the Ansible play books"
   hosts: localhost
   vars_prompt:
-  - name:
-    Number: number
+  - name: number
     prompt: Enter the Number
     private: no
   tasks:

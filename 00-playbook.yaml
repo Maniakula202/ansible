@@ -1,24 +1,21 @@
 - name: "Practicing the Ansible play books"
   hosts: localhost
-  vars:
-    student: Manikanta # string 
-    course: DevOps # string 
-    duration: 120 # intiger/number
-    present: true # boolean
-    #list
-    course_content:
-    - linux
-    - shell-script
-    - ansible
-    #dictionary/map/object
-    content_duration:
-      linux: 10HRS
-      shell-script: 12hrs
-      ansible: 20hrs
+  vars_prompt:
+  - name:
+    Number: number
+    prompt: Enter the Number
+    private: no
   tasks:
-  - name: printing the data types
+  - name: Checking the gievn number is greater than 50 or not
     ansible.builtin.debug:
-      msg: "Course Name is: {{ course }}, Duratioin: {{ duration }}, student is: {{ student }}"
-  - name: printing the data types
+      msg: "The given number {{ number }} is greater that 50"
+    when: number > 50
+  - name: Checking the gievn number is lessthan 50 or not
     ansible.builtin.debug:
-      msg: "course_content is: {{ course_content }}, content_duration is: {{ content_duration }}"
+      msg: "The given number {{ number }} is lessthan that 50"
+    when: number < 50
+  - name: Checking the gievn number is Equal to 50 or not
+    ansible.builtin.debug:
+      msg: "The given number {{ number }} is Equal to that 50"
+    when: number == 50
+

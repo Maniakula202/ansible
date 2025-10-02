@@ -1,5 +1,6 @@
 - name: "Practicing the Ansible play books"
   hosts: loacalhost
   tasks:
+  - name: Learnig Ansible
     ansible.builtin.debug:
       msg: "Learning ansible at JoinDevOps by sivakumar"
